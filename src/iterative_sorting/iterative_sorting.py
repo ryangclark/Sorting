@@ -46,7 +46,7 @@ def count_sort( arr, maximum=-1 ):
     for item in arr:
         if item < 0:
             return 'Error, negative numbers not allowed in Count Sort'
-        if item + 1 > len(counts):
+        if maximum < 0 and item + 1 > len(counts):
             extend_count = item + 1 - len(counts)
             counts = counts + [0] * extend_count
         counts[item] += 1
